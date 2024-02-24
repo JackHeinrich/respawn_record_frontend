@@ -1,0 +1,24 @@
+.game-card {
+    background-color: #000000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 1rem;
+    width: 125px; /* Set the width of the card */
+    height: 175px; /* Set the height of the card */
+    overflow: hidden; /* Hide any content that overflows the card */
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-top: 0.5rem;
+  }
+  
+  .game-card img {
+    width: 100%; /* Ensures the image takes up the full width of its container */
+    height: 100%; /* Maintains the aspect ratio of the image */
+    object-fit: cover; /* Scales the image to be as large as possible while maintaining aspect ratio and cropping any excess */
+    border-radius: 0.5rem;
+  }
+  
+  .text-holder {
+    padding: 0.25rem;
+  }
