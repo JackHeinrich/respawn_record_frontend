@@ -22,3 +22,8 @@
   .text-holder {
     padding: 0.25rem;
   }
+
+  .game-card:hover{
+    background-color: #424242;
+    transition-duration: 250ms;
+  }

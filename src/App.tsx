@@ -1,14 +1,11 @@
-import './App.css'
+import './App.css'; // Import the CSS file
 
-import CardGrid from './components/card_grid/CardGrid'
+import EssentialsContainer from './components/essentials_container/EssentialsContainer';
 
 function App() {
-
   return (
-    <>
-    <CardGrid/>
-    </>
-  )
+    <EssentialsContainer></EssentialsContainer>
+  );
 }
 
-export default App
+export default App;

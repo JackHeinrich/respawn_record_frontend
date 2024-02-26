@@ -1,0 +1,10 @@
+.fullWidth {
+    background-color: rgb(0, 0, 0);
+    width: 100vw;
+    height: 6.5vh;
+    padding: 0.5vw;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-end;
+    color: white; /* Set text color to white */
+}

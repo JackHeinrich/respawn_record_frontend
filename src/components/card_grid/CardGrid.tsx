@@ -1,26 +1,32 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import GameCard from '../game_card/GameCard';
-import get_all_games from '../../functions/get_all_games';
+import get_all_games from '../../functions/steam/get_all_games';
 
 import './CardGrid.css';
 
 export default function CardGrid() {
-  const [games, setGames] = useState([]);
+  const [games, setGames] = useState({});
 
   useEffect(() => {
     const fetchGames = async () => {
-      const allGames = await get_all_games();
-      setGames(allGames);
+      const allGamesObject = await get_all_games();
+      setGames(allGamesObject);
     };
 
     fetchGames();
   }, []);
 
-  console.log(games)
+  const gameList = games['gameList'] || []; // Initialize with an empty array if gameList is undefined
+
+  console.log("Number of games:", gameList.length);
 
   return (
     <div className="grid-container">
-        <GameCard/>
+      {gameList.slice(0, 1001).map((game: {name: String, appid: number}, index: number) => (
+        (game.name !== '' &&
+          <GameCard key={index} gameName={game.name} appId={game.appid}/>
+        )
+      ))}
     </div>
   );
 }
