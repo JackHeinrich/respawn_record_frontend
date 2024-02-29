@@ -12,8 +12,10 @@ export default function AuthInput({
   label,
   placeholder,
   setValue,
-  invalidValueMessage,
-  isValidConditionals,
+  invalidValueMessage = "",
+  isValidConditionals = () => {
+    return true;
+  },
 }: Props) {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const input = event.target.value;
@@ -25,7 +27,7 @@ export default function AuthInput({
     setValue(input);
   };
 
-  const [isValid, setIsValid] = useState(false);
+  const [isValid, setIsValid] = useState(true);
 
   return (
     <>
