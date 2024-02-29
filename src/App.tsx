@@ -1,14 +1,20 @@
-import './App.css'
+import "./App.css"; // Import the CSS file
 
-import CardGrid from './components/card_grid/CardGrid'
+import NavBar from "./components/NavBar/NavBar";
+
+import LoginModal from "./components/NavBar/UserDropDown/AuthModals/LoginModal/LoginModal";
+
+import SignUpModal from "./components/NavBar/UserDropDown/AuthModals/SignUpModal/SignUpModal";
 
 function App() {
-
+  // 2. Wrap ChakraProvider at the root of your app
   return (
-    <>
-    <CardGrid/>
-    </>
-  )
+    <div>
+      <NavBar />
+      <LoginModal />
+      <SignUpModal />
+    </div>
+  );
 }
 
-export default App
+export default App;

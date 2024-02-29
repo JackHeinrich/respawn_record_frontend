@@ -10,6 +10,7 @@
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     padding-top: 0.5rem;
+    color: white;
   }
   
   .game-card img {
@@ -21,4 +22,9 @@
   
   .text-holder {
     padding: 0.25rem;
+  }
+
+  .game-card:hover{
+    background-color: #424242;
+    transition-duration: 250ms;
   }
