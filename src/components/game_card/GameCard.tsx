@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './GameCard.css';
-import get_game from '../../functions/steam/get_game';
+import get_game from '../../functions/get_game';
 
 interface Props {
   gameName: string;
