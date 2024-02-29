@@ -1,14 +1,22 @@
-interface Props {
-  setLoggedIn: (value: boolean) => void;
-}
+import cookies from "js-cookie";
 
-export default function LoggedInOptions({ setLoggedIn }: Props) {
+import { refreshPage } from "../../../util/refreshPage";
+
+export default function LoggedInOptions() {
+  const handleLogout = async () => {
+    {
+      cookies.remove("loggedIn", "False", { expires: 7 });
+      cookies.remove("sessionUser");
+      refreshPage();
+    }
+  };
+
   return (
     <li>
       <a className="dropdown-item" href="#">
         View Profile
       </a>
-      <a className="dropdown-item" href="#" onClick={() => setLoggedIn(false)}>
+      <a className="dropdown-item" href="#" onClick={() => handleLogout()}>
         Logout
       </a>
     </li>
