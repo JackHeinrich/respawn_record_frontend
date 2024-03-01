@@ -1,6 +1,6 @@
-import axios from 'axios';
+import axios from "../../util/axios";
 
-const apiUrl = 'http://localhost:3000/api/steam/get_game/'; // Replace 'your_port' and 'endpoint' with your actual API URL
+const apiUrl = 'steam/get_game/'; // Replace 'your_port' and 'endpoint' with your actual API URL
 
 const get_game = async (appId: number) => {
   try {

@@ -81,6 +81,8 @@ export default function SignUpModal() {
                   setValue={setEmail}
                   invalidValueMessage="Please enter a valid email"
                   isValidConditionals={isValidEmail}
+                  type="text"
+                  value={email}
                 />
                 <AuthInput
                   label="Username"
@@ -88,14 +90,18 @@ export default function SignUpModal() {
                   setValue={setUsername}
                   invalidValueMessage="Please enter a valid username"
                   isValidConditionals={isValidUsername}
+                  type="text"
+                  value={username}
                 />
 
                 <AuthInput
                   label="Password"
-                  placeholder="Enter your username"
+                  placeholder="Enter your password"
                   setValue={setPassword}
                   invalidValueMessage="Please enter a valid password"
                   isValidConditionals={isValidPassword}
+                  type="password"
+                  value={password}
                 />
               </div>
             </form>
