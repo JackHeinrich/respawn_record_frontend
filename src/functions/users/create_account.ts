@@ -1,6 +1,6 @@
-import axios from 'axios';
+import axios from "../../util/axios";
 
-const apiUrl = 'http://localhost:3000/api/users/create_user'; // Replace 'your_port' and 'endpoint' with your actual API URL
+const apiUrl = 'users/create_user'; // Replace 'your_port' and 'endpoint' with your actual API URL
 
 const create_user = async (email: string, username: string, password: string) => {
   try {

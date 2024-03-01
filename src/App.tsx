@@ -1,19 +1,29 @@
 import "./App.css"; // Import the CSS file
 
-import NavBar from "./components/NavBar/NavBar";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import LoginModal from "./components/NavBar/UserDropDown/AuthModals/LoginModal/LoginModal";
+import Layout from "./components/Main/Main";
 
-import SignUpModal from "./components/NavBar/UserDropDown/AuthModals/SignUpModal/SignUpModal";
+import Missing from "./components/Missing/Missing";
+
+import Test from "./components/Test/Test";
 
 function App() {
-  // 2. Wrap ChakraProvider at the root of your app
   return (
-    <div>
-      <NavBar />
-      <LoginModal />
-      <SignUpModal />
-    </div>
+    <Router>
+      <Routes>
+        {/* public routes */}
+
+        <Route path="/" element={<Layout />} />
+
+        {/* protected routes */}
+        <Route path="test" element={<Test />} />
+
+        {/* catch all */}
+
+        <Route path="*" element={<Missing />} />
+      </Routes>
+    </Router>
   );
 }
 

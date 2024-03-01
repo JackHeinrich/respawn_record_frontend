@@ -4,10 +4,6 @@ import AuthenticationInput from "../AuthInput";
 
 import login from "../../../../../functions/users/login";
 
-import cookies from "js-cookie";
-
-import getUserDetails from "../../../../../functions/users/getUserDetails";
-
 import { refreshPage } from "../../../../../util/refreshPage";
 
 export default function LoginModal() {
@@ -20,13 +16,10 @@ export default function LoginModal() {
   const submitLoginForm = async (email: string, password: string) => {
     const result = await login(email, password);
     setLoginResult(result);
+    refreshPage;
     if (result.status === "Success") {
-      const userDetails = await getUserDetails(email, password);
-      cookies.set("loggedIn", "True", { expires: 7 });
-      cookies.set("sessionUser", userDetails.data.username, {
-        expires: 7,
-      });
-      refreshPage();
+      setEmail("");
+      setPassword("");
     }
   };
 
@@ -47,11 +40,15 @@ export default function LoginModal() {
                   label="Email"
                   placeholder="Enter your email"
                   setValue={setEmail}
+                  value={email}
+                  type="text"
                 />
                 <AuthenticationInput
                   label="Password"
                   placeholder="Enter your password"
                   setValue={setPassword}
+                  value={password}
+                  type="password"
                 />
               </div>
             </form>

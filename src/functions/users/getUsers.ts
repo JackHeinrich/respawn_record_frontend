@@ -1,8 +1,8 @@
 import axios from "../../util/axios";
 
-const apiUrl = 'steam/get_all_games'; // Replace 'your_port' and 'endpoint' with your actual API URL
+const apiUrl = 'users/get_users'; // Replace 'your_port' and 'endpoint' with your actual API URL
 
-const get_all_games = async () => {
+const getUsers = async () => {
   try {
     const response = await axios.get(apiUrl);
     return response.data;
@@ -12,4 +12,4 @@ const get_all_games = async () => {
   }
 };
 
-export default get_all_games;
+export default getUsers;

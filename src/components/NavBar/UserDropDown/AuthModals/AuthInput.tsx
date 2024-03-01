@@ -6,6 +6,8 @@ interface Props {
   setValue: (value: string) => void;
   invalidValueMessage: string;
   isValidConditionals: (input: string) => boolean;
+  value: string;
+  type: string;
 }
 
 export default function AuthInput({
@@ -16,6 +18,8 @@ export default function AuthInput({
   isValidConditionals = () => {
     return true;
   },
+  value,
+  type,
 }: Props) {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const input = event.target.value;
@@ -36,6 +40,9 @@ export default function AuthInput({
         className="form-control mt-2 mb-2"
         placeholder={placeholder}
         onChange={handleChange}
+        value={value}
+        required
+        type={type}
       />
       {!isValid && <p className="text-danger">{invalidValueMessage}</p>}
     </>
