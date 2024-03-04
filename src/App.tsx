@@ -6,19 +6,26 @@ import Layout from "./components/Main/Main";
 
 import Missing from "./components/Missing/Missing";
 
-import Test from "./components/Test/Test";
+import Profile from "./components/Profile/Profile";
+
+import RequireAuth from "./components/Profile/RequireAuth";
+
+import useValidateJWT from "./util/useValidateJWT";
 
 function App() {
+  const { validUser } = useValidateJWT();
+
   return (
     <Router>
       <Routes>
         {/* public routes */}
 
-        <Route path="/" element={<Layout />} />
+        <Route path="/" element={<Layout validUser={validUser} />} />
 
         {/* protected routes */}
-        <Route path="test" element={<Test />} />
-
+        <Route element={<RequireAuth />}>
+          <Route path="/profile" element={<Profile validUser={validUser} />} />
+        </Route>
         {/* catch all */}
 
         <Route path="*" element={<Missing />} />

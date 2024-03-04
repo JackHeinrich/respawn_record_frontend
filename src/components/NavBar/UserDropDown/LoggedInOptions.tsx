@@ -1,22 +1,30 @@
-import cookies from "js-cookie";
-
 import { refreshPage } from "../../../util/refreshPage";
 
+import logout from "../../../functions/users/logout";
+
+import { useNavigate } from "react-router-dom";
+
 export default function LoggedInOptions() {
+  const navigate = useNavigate();
+
   const handleLogout = async () => {
     {
-      cookies.remove("loggedIn", "False", { expires: 7 });
-      cookies.remove("sessionUser");
+      const logoutResult = await logout();
+      console.log(logoutResult);
       refreshPage();
     }
   };
 
+  const navigateToProfile = () => {
+    navigate("/profile");
+  };
+
   return (
     <li>
-      <a className="dropdown-item" href="#">
+      <a className="dropdown-item" href="#" onClick={navigateToProfile}>
         View Profile
       </a>
-      <a className="dropdown-item" href="#" onClick={() => handleLogout()}>
+      <a className="dropdown-item" href="#" onClick={handleLogout}>
         Logout
       </a>
     </li>

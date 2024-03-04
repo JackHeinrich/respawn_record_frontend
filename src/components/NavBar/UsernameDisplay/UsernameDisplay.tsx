@@ -1,12 +1,20 @@
-import cookies from "js-cookie";
+interface Props {
+  validUser: {};
+}
 
-export default function UsernameDisplay() {
-  const userName = cookies.get("sessionUser");
+export default function UsernameDisplay({ validUser }: Props) {
+  const username = validUser?.userProps?.username;
   return (
     <li className="nav-item">
-      <a className="nav-link active navbar-brand" aria-current="page" href="#">
-        {userName ? userName : "User"}
-      </a>
+      {username && (
+        <a
+          className="nav-link active navbar-brand"
+          aria-current="page"
+          href="#"
+        >
+          {username}
+        </a>
+      )}
     </li>
   );
 }
