@@ -18,6 +18,11 @@ export default function NavBar({ validUser }: Props) {
           <HomeButton />
           <UserDropDown validUser={validUser} />
           <UsernameDisplay validUser={validUser} />
+          <li>
+            <a className="nav-link active navbar-brand" aria-current="page">
+              Respawn Record
+            </a>
+          </li>
         </ul>
         <SearchBar />
       </div>

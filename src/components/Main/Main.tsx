@@ -10,7 +10,7 @@ interface Props {
 
 export default function Main({ validUser }: Props) {
   return (
-    <main className="App">
+    <main className="App backround">
       <NavBar validUser={validUser} />
       <LoginModal />
       <SignUpModal />

@@ -1,16 +1,16 @@
-import "./App.css"; // Import the CSS file
-
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import Layout from "./components/Main/Main";
+import Main from "./components/Main/Main";
 
 import Missing from "./components/Missing/Missing";
 
 import Profile from "./components/Profile/Profile";
 
-import RequireAuth from "./components/Profile/RequireAuth";
+import RequireAuth from "./components/RequireAuth/RequireAuth";
 
 import useValidateJWT from "./util/useValidateJWT";
+
+import SearchPage from "./components/SearchPage/SearchPage";
 
 function App() {
   const { validUser } = useValidateJWT();
@@ -20,8 +20,12 @@ function App() {
       <Routes>
         {/* public routes */}
 
-        <Route path="/" element={<Layout validUser={validUser} />} />
+        <Route path="/" element={<Main validUser={validUser} />} />
 
+        <Route
+          path="/search/:query"
+          element={<SearchPage validUser={validUser} />}
+        />
         {/* protected routes */}
         <Route element={<RequireAuth />}>
           <Route path="/profile" element={<Profile validUser={validUser} />} />
