@@ -16,10 +16,10 @@ export default function LoginModal() {
   const submitLoginForm = async (email: string, password: string) => {
     const result = await login(email, password);
     setLoginResult(result);
-    refreshPage;
-    if (result.status === "Success") {
+    if (result?.status === "Success") {
       setEmail("");
       setPassword("");
+      refreshPage();
     }
   };
 
@@ -52,12 +52,17 @@ export default function LoginModal() {
                 />
               </div>
             </form>
-            {loginResult.message && loginResult.status === "Success" && (
-              <p className="text-success">{loginResult.message}</p>
-            )}
-            {loginResult.message && loginResult.status === "Failed" && (
-              <p className="text-danger">{loginResult.message}</p>
-            )}
+            {!loginResult && <p className="text-danger">No server response</p>}
+            {loginResult &&
+              loginResult?.message &&
+              loginResult?.status === "Success" && (
+                <p className="text-success">{loginResult?.message}</p>
+              )}
+            {loginResult &&
+              loginResult?.message &&
+              loginResult?.status === "Failed" && (
+                <p className="text-danger">{loginResult?.message}</p>
+              )}
           </div>
           <div className="modal-footer">
             <button

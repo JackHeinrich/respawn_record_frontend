@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
 import LoggedInOptions from "./LoggedInOptions";
 import LoggedOutOptions from "./LoggedOutOptions";
-import cookies from "js-cookie";
 
-export default function UserDropDown() {
-  const [loggedIn, setLoggedIn] = useState(cookies.get("loggedIn") === "True");
+interface Props {
+  validUser: {};
+}
 
+export default function UserDropDown({ validUser }: Props) {
   return (
     <li className="nav-item dropdown">
       <a
@@ -18,7 +18,7 @@ export default function UserDropDown() {
         <i className="bi bi-person-circle"></i>
       </a>
       <ul className="dropdown-menu">
-        {loggedIn ? <LoggedInOptions /> : <LoggedOutOptions />}
+        {validUser ? <LoggedInOptions /> : <LoggedOutOptions />}
       </ul>
     </li>
   );
