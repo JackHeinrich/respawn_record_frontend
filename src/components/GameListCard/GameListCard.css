@@ -1,0 +1,18 @@
+.game-list-card {
+    display: flex; /* Use flexbox */
+    align-items: center; /* Center items vertically */
+  }
+
+  .game-cover {
+    border-radius: 2%;
+    border: 1.5px solid rgb(73, 80, 87);
+    margin-right: 10px; /* Add space between image and text */
+    margin-top: 1%;
+    margin-bottom: 1%;
+  } 
+
+  .game-options-button {
+    position: absolute;
+    top: 5px; /* Adjust top positioning */
+    right: 5px; /* Adjust right positioning */
+  }

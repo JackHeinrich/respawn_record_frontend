@@ -1,0 +1,21 @@
+.secondary {
+    color: rgb(73, 80, 87) !important;
+}
+
+.button {
+    margin-left: 2% !important;
+}
+
+.invisible-button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
+.success {
+    color: rgb(58, 185, 79) !important;
+}
