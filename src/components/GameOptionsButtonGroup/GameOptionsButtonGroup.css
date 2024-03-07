@@ -1,0 +1,4 @@
+.right-oriented {
+    display: flex;
+    justify-content: right;
+}

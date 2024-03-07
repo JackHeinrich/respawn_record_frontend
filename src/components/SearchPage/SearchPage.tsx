@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import SearchResults from "../SearchResults/SearchResults";
 
 interface Props {
-  validUser: {};
+  validUser?: {};
 }
 
 export default function Profile({ validUser }: Props) {
@@ -11,7 +11,7 @@ export default function Profile({ validUser }: Props) {
   return (
     <main>
       <NavBar validUser={validUser} />
-      <SearchResults searchTerm={query!} />
+      <SearchResults searchTerm={query!} validUser={validUser} />
     </main>
   );
 }

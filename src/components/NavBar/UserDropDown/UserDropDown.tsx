@@ -15,7 +15,7 @@ export default function UserDropDown({ validUser }: Props) {
         data-bs-toggle="dropdown"
         aria-expanded="false"
       >
-        <i className="bi bi-person-circle"></i>
+        <i className="bi bi-person-circle" />
       </a>
       <ul className="dropdown-menu">
         {validUser ? <LoggedInOptions /> : <LoggedOutOptions />}
