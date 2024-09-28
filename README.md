@@ -1,5 +1,19 @@
-This is ![image](https://github.com/user-attachments/assets/19f2f908-01d4-41ad-956b-a9b1b17035b9)
+# RespawnRecord is a project of mine to display my web app development skills
 
+This app was made using Next.js, React, Auth0, and is hosted on Render.
+
+It is an app similar to Letterboxxed, but for games. You can follow others and view which games they've played as well as log the games you have played yourself.
+
+#Home page
+![image](https://github.com/user-attachments/assets/442433a0-c241-49d7-8029-6ea4b1f129c5)
+
+#Viewing profiles
+![image](https://github.com/user-attachments/assets/9821ca09-78f2-4341-9401-deabcb260e02)
+
+#Search page
+![image](https://github.com/user-attachments/assets/41b398d8-6513-4172-b478-02ab21a3a145)
+
+and more features!
 
 # React + TypeScript + Vite
 
