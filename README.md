@@ -1,6 +1,8 @@
 # RespawnRecord is a project of mine to display my web app development skills
 
-This app was made using Next.js, React, Auth0, and is hosted on Render.
+This app was made using Next.js, React, Auth0, and the IGDB API.
+
+It is hosted on Render (free hosting service) at https://respawnrecordv2-frontend.onrender.com
 
 It is an app similar to Letterboxxed, but for games. You can follow others and view which games they've played as well as log the games you have played yourself.
 
